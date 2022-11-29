@@ -15,12 +15,17 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loader {
+  @apply border-gray-200 rounded-full border-4 ease-linear w-10 h-10;
+  border-top-color: #363ce0;
+  animation: spinner 1.5s linear infinite;
+}
+
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
