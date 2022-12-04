@@ -3,13 +3,13 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay } from "swiper";
 import Image from 'next/image';
 import Author from './author';
-import fetcher from "../lib/fetcher";
+import Fetcher from "../lib/fetcher";
 import Spinner from "./spinner";
 import Error from "./error";
 import Link from 'next/link';
 
 const sectionThree = () => {
-    const { data, isLoading, isError } = fetcher("api/popular");
+    const { data, isLoading, isError } = Fetcher("api/popular");
     if (isLoading) return <Spinner />;
     if (isError) return <Error />;
 

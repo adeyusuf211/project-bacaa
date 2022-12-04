@@ -4,13 +4,13 @@ import Author from './author'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay } from 'swiper'
 import Link from 'next/link'
-import fetcher from "../lib/fetcher"
+import Fetcher from "../lib/fetcher"
 import Spinner from "./spinner"
 import Error from "./error"
 import 'swiper/css'
 
 const sectionOne = () => {
-    const { data, isLoading, isError } = fetcher("api/trending");
+    const { data, isLoading, isError } = Fetcher("api/trending");
     if (isLoading) return <Spinner />;
     if (isError) return <Error />;
 

@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import Author from './author';
-import fetcher from "../lib/fetcher";
+import Fetcher from "../lib/fetcher";
 import Spinner from "./spinner";
 import Error from "./error";
 import Link from 'next/link';
 
 const Related = () => {
-  const { data, isLoading, isError } = fetcher("api/posts");
+  const { data, isLoading, isError } = Fetcher("api/posts");
   if (isLoading) return <Spinner />;
   if (isError) return <Error />;
   return (
